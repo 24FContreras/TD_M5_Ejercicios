@@ -1,0 +1,42 @@
+-- TABLA EMPRESA
+CREATE TABLE empresa(
+		RUT VARCAR(10),
+		Nombre VARCHAR(120) PRIMARY KEY,
+		Direccion VARCHAR(120) NOT NULL,
+		Telefono VARCHAR(15) NOT NULL,
+		Correo VARCHAR(80) NOT NULL,
+		Web VARCHAR(50) NOT NULL,
+)
+
+-- TABLA HERRAMIENTA
+CREATE TABLE Herramienta(
+		IDHerramienta INT PRIMARY KEY,
+		Nombre VARCHAR(120),
+		PrecioDia INT NOT NULL
+)
+
+-- TABLA CLIENTE
+CREATE TABLE Cliente(
+		RUT VARCHAR(10) PRIMARY KEY,
+		Nombre VARCHAR(120) NOT NULL,
+		Correo VARCHAR(80) NOT NULL,
+		Direccion VARCHAR(120) NOT NULL,
+		Celular VARCHAR(15) NOT NULL
+)
+
+-- TABLA ARRIENDO
+CREATE TABLE Arriendo(
+		Folio INT PRIMARY KEY,
+		Fecha DATE NOT NULL,
+		Dias INT NOT NULL,
+		ValorDia INT NOT NULL,
+		Garantia VARCHAR(30) NOT NULL,
+		Herramienta_IDHerramienta INT NOT NULL,
+		Cliente_RUT VARCHAR(10) NOT NULL,
+		CONSTRAINT Arriendo_Herramienta_DK 
+			FOREIGN KEY(Herramienta_IDHerramienta) 
+			REFERENCES Herramienta(IDHerramienta),
+		CONSTRAINT Arriendo_Cliente_DK 
+			FOREIGN KEY(Cliente_RUT) 
+			REFERENCES Cliente(RUT)
+)
