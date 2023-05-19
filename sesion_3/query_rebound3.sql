@@ -6,7 +6,7 @@ CREATE TABLE Empresa (
 	telefono VARCHAR(15) NOT NULL,
 	correo VARCHAR(80) NOT NULL,
 	web VARCHAR(50) NOT NULL
-)
+);
 
 -- TABLA CLIENTE
 CREATE TABLE Cliente(
@@ -16,19 +16,19 @@ CREATE TABLE Cliente(
 	direccion VARCHAR(120) NOT NULL,
 	celular VARCHAR(15) NOT NULL,
 	alta CHAR(1) NOT NULL
-)
+);
 
 --TABLA TIPO DE VEHÍCULO
 CREATE TABLE TipoVehiculo(
 	IDTipoVehiculo INT PRIMARY KEY,
 	Nombre VARCHAR(120) NOT NULL
-)
+);
 
 -- TABLA MARCA
 CREATE TABLE marca(
 	IDMarca INT PRIMARY KEY,
 	Nombre VARCHAR(120) NOT NULL
-)
+);
 
 -- TABLAS CON RELACIONES
 
@@ -48,7 +48,7 @@ CREATE TABLE Vehiculo(
 	CONSTRAINT Vehiculo_Marca_FK 
 		FOREIGN KEY(Marca_IDMarca) 
 		REFERENCES Marca(IDMarca)
-)
+);
 
 -- TABLA VENTA
 CREATE TABLE Venta(
@@ -62,7 +62,7 @@ CREATE TABLE Venta(
 	CONSTRAINT Venta_Vehiculo_FK 
 		FOREIGN KEY(Vehiculo_IDVehiculo) 
 		REFERENCES Vehiculo(IDVehiculo)
-)
+);
 
 --TABLA MANTENCIÓN
 CREATE TABLE Mantencion(
@@ -73,6 +73,6 @@ CREATE TABLE Mantencion(
 	CONSTRAINT Mantencion_Venta_FK
 		FOREIGN KEY(Venta_folio) 
 		REFERENCES Venta(Folio)
-)
+);
 
 

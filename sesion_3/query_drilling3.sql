@@ -6,14 +6,14 @@ CREATE TABLE empresa(
 		Telefono VARCHAR(15) NOT NULL,
 		Correo VARCHAR(80) NOT NULL,
 		Web VARCHAR(50) NOT NULL,
-)
+);
 
 -- TABLA HERRAMIENTA
 CREATE TABLE Herramienta(
 		IDHerramienta INT PRIMARY KEY,
 		Nombre VARCHAR(120),
 		PrecioDia INT NOT NULL
-)
+);
 
 -- TABLA CLIENTE
 CREATE TABLE Cliente(
@@ -22,7 +22,7 @@ CREATE TABLE Cliente(
 		Correo VARCHAR(80) NOT NULL,
 		Direccion VARCHAR(120) NOT NULL,
 		Celular VARCHAR(15) NOT NULL
-)
+);
 
 -- TABLA ARRIENDO
 CREATE TABLE Arriendo(
@@ -39,4 +39,4 @@ CREATE TABLE Arriendo(
 		CONSTRAINT Arriendo_Cliente_DK 
 			FOREIGN KEY(Cliente_RUT) 
 			REFERENCES Cliente(RUT)
-)
+);
