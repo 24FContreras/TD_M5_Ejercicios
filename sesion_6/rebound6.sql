@@ -9,7 +9,7 @@ SELECT VH.* FROM vehiculo AS VH
 -- MontoVenta, NombreCliente, RutCliente, Patente, NombreMarca, y Modelo.
 SELECT VE.folio AS "Folio", 
 	   VE.fecha AS "FechaVenta",
-	   VH.precio AS "MontoVenta",
+	   VE.monto AS "MontoVenta",
 	   CL.nombre AS "NombreCliente",
 	   CL.rut AS "RutCliente",
 	   VH.patente AS "Patente",
@@ -24,7 +24,7 @@ WHERE TO_CHAR(fecha, 'YYYY-MM') = '2020-01'
 
 -- 3. Sumar las ventas por mes y marca del año 2020.
 SELECT TO_CHAR(fecha, 'YYYY-MM') AS "Mes",
-	   SUM(VH.precio) AS "Monto_Ventas",
+	   SUM(VE.monto) AS "Monto_Ventas",
 	   MA.nombre AS "Marca_Vehiculo"
 	    FROM venta AS VE
 	LEFT JOIN vehiculo AS VH ON VE.vehiculo_idvehiculo = VH.idvehiculo

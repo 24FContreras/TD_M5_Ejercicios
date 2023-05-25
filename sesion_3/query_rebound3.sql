@@ -54,6 +54,7 @@ CREATE TABLE Vehiculo(
 CREATE TABLE Venta(
 	Folio INT PRIMARY KEY,
 	Fecha DATE DEFAULT current_date,
+	Monto INT NOT NULL,
 	Vehiculo_IDVehiculo INT NOT NULL UNIQUE,
 	Cliente_RUT VARCHAR(10) NOT NULL,
 	CONSTRAINT Venta_Cliente_FK 
